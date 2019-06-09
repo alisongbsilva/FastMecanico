@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "8375265868",
+    "firebase_url": "https://fastmecanico.firebaseio.com",
+    "project_id": "fastmecanico",
+    "storage_bucket": "fastmecanico.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8375265868:android:dbcc83e6f93bd271",
+        "android_client_info": {
+          "package_name": "com.example.fastmecanico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8375265868-lujse456rlsqhfhatr0sgnl0tj9s3q92.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fastmecanico",
+            "certificate_hash": "485f089c560ca28a1ce7c91c9f086274b6840239"
+          }
+        },
+        {
+          "client_id": "8375265868-9ivuhj7mf4d8dj6jc7jts0ksk57n86mk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fastmecanico",
+            "certificate_hash": "d06b4cfc0a748bc5c667faa995beac219fb8d44c"
+          }
+        },
+        {
+          "client_id": "8375265868-76dnit6o10sak3cs698mm0phhgkri5u1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fastmecanico",
+            "certificate_hash": "eecbc03aa950f31a55b8bc382353a4386cbe1aa0"
+          }
+        },
+        {
+          "client_id": "8375265868-ore6kr0mu2uj7qv3aj8pj9kdh50l91n4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHfJ7iqVBUm4S1l-xcE5Uc73YZH6UTxh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8375265868-ore6kr0mu2uj7qv3aj8pj9kdh50l91n4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
