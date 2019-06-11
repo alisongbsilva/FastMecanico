@@ -1,44 +1,77 @@
 package com.example.fastmecanico;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
+import android.util.Log;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
-public class MainActivity<arrayAdapter> extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 //Criando Botao e linkando a  tela cadastrar
     private FirebaseAuth mAuth;
     private int RC_SIGN_IN = 1;
+    private FirebaseFirestore db;
+    ArrayAdapter<String> adapter;
+    List<String> lista;
+    ListView demandas;
 
 @Override
     protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.bemvindo_main);
+    setContentView(R.layout.telademanda);
+    db = FirebaseFirestore.getInstance();
 
     getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
     getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
     getSupportActionBar().setTitle("Fast Mecanico");     //Titulo para ser exibido na sua Action Bar em frente à seta
 
+    demandas = findViewById(R.id.lista_demanda);
+
     mAuth = FirebaseAuth.getInstance();
 
+    buscarDemandas();
 }
+
+    private void buscarDemandas(){
+        db.collection("Demanda").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    lista = new ArrayList<>();
+                    for(QueryDocumentSnapshot doc : task.getResult()){
+                        lista.add(doc.getString("Desc"));
+                        Log.d("AppAlison", doc.getString("Desc"));
+                    }
+                    adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, lista);
+                    demandas.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                } else {
+                    Log.d("AppAlison", task.getException().getMessage());
+                }
+            }
+        });
+    }
 
     @Override
     protected void onStart() {
@@ -78,46 +111,5 @@ public class MainActivity<arrayAdapter> extends AppCompatActivity {
             }
         }
     }
-
-//List view para a tela de demandas
-
-    private ArrayList<String>preencherdados(){
-        ArrayList<String> dados = new ArrayList<String>();
-        dados.add("dados");
-        return dados;
-    }
-
-
-
-
-// Botoes para voltar a tela de inicio
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
-        switch (item.getItemId()) {
-            case android.R.id.home:  //ID do seu botão (gerado automaticamente pelo android.
-                startActivity(new Intent(this, MainActivity.class));  //O efeito ao ser pressionado do botão.
-                finishAffinity();  //Método para matar a activity e não deixa-lá indexada na pilhagem
-                break;
-            default:break;
-        }
-        return true;
-    }
-
-    @Override
-    public void onBackPressed(){ //Botão BACK padrão do android
-        startActivity(new Intent(this, MainActivity.class)); //O efeito ao ser pressionado do botão
-        finishAffinity(); //Método para matar a activity e não deixa-lá indexada na pilhagem
-        return;
-    }
-//conexao dos botoes às telas
-    public void chamacadastro (View v){setContentView(R.layout.cadastrodeusuario);}//botao para cadastrar
-    public void chamatelaveiculo (View v){ setContentView(R.layout.cadastrodeveiculo); }//botao de cadastro para cadastrar veiculo
-    public void salvaevolta(View v) {setContentView(R.layout.bemvindo_main);}//vai salvar no banco e retornar a tela inicial
-    public void esqueci (View v){ setContentView(R.layout.recuperarsenha); }// vai enviar a senha para o email cadastrado
-    public void verdemanda(View v){setContentView(R.layout.telademanda);}
-    public void abrirdemanda(View v){setContentView(R.layout.solicitacaodeatendimento);}
-    public void altera (View v){setContentView(R.layout.cadastrodeusuario);}
-
-
 }
 
