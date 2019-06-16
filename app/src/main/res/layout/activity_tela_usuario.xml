@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelaUsuario">
+
+    <Button
+        android:id="@+id/iddemanda"
+        android:layout_width="390dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="31dp"
+        android:background="@drawable/fui_idp_button_background_github"
+        android:text="Acessar Demandas"
+        android:textAllCaps="false"
+        android:textColor="#F50404"
+        app:layout_constraintBottom_toTopOf="@+id/idalterar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.938" />
+
+    <Button
+        android:id="@+id/idsair"
+        android:layout_width="390dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="168dp"
+        android:background="@drawable/fui_idp_button_background_github"
+        android:text="Sair"
+        android:textColor="#F50404"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/idalterar"
+        android:layout_width="390dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="31dp"
+        android:background="@drawable/fui_idp_button_background_github"
+        android:text="Alterar Cadastro"
+        android:textColor="#F50404"
+        app:layout_constraintBottom_toTopOf="@+id/idexcluir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/idexcluir"
+        android:layout_width="390dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="31dp"
+        android:background="@drawable/fui_idp_button_background_github"
+        android:text="Excluir cadastro"
+        android:textColor="#F50404"
+        app:layout_constraintBottom_toTopOf="@+id/idsair"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
