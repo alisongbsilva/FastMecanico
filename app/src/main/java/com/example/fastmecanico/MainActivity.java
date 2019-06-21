@@ -5,7 +5,10 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.firebase.ui.auth.AuthUI;
@@ -39,21 +42,51 @@ public class MainActivity extends AppCompatActivity {
 @Override
     protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.telademanda);
+    getSupportActionBar().hide(); //Oculta a ActionBar.
+    setContentView(R.layout.activity_tela_usuario);
     db = FirebaseFirestore.getInstance();
 
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
-    getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
-    getSupportActionBar().setTitle("Fast Mecanico");     //Titulo para ser exibido na sua Action Bar em frente à seta
-
-    demandas = findViewById(R.id.lista_demanda);
+    //getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
+    //getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
+    //getSupportActionBar().setTitle("Fast Mecanico");     //Titulo para ser exibido na sua Action Bar em frente à seta
 
     mAuth = FirebaseAuth.getInstance();
 
-    buscarDemandas();
+
+    /*demandas = findViewById(R.id.lista_demanda);
+
+
+    buscarDemandas();*/
+
+    Button demandas = (Button) findViewById(R.id.demandas);
+    demandas.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v ){
+            setContentView(R.layout.activity_lista_demandas);
+        }
+    });
+
+    /*public void signOut() {
+        // [START auth_sign_out]
+        FirebaseAuth.getInstance().signOut();
+        // [END auth_sign_out]
+    }
+
+    Button sair = (Button) findViewById(R.id.sair);
+    demandas.setOnClickListener(new View.OnClickListener() {
+
+    });*/
+
+   /*public void abrirDemandas(View view) {
+        Intent intent = new Intent(this, ListaDemandas.class);
+        EditText editText = (EditText) findViewById(R.id.editText);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }*/
 }
 
-    private void buscarDemandas(){
+    /*private void buscarDemandas(){
         db.collection("Demanda").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -71,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
+    }*/
 
     @Override
     protected void onStart() {
