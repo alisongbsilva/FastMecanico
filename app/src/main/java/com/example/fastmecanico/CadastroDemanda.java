@@ -16,7 +16,7 @@ public class CadastroDemanda extends AppCompatActivity {
         veiculo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v ){
-                setContentView(R.layout.telademanda);
+                setContentView(R.layout.activity_lista_demandas);
             }
         });
     }

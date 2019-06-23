@@ -14,7 +14,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ListaDemandas"></activity>
         <activity android:name=".CadastroDemanda" />
-        <activity android:name=".TelaUsuario" />
         <activity android:name=".CadastroVeiculo" />
         <activity android:name=".CadastroDeUsuario" />
         <activity android:name=".MainActivity">

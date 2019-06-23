@@ -30,7 +30,6 @@ public class ListaDemandas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().show();
         setContentView(R.layout.activity_lista_demandas);
 
         db = FirebaseFirestore.getInstance();
