@@ -29,7 +29,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.911" />
+                app:layout_constraintVertical_bias="0.911"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:id="@+id/id_marca"
@@ -43,7 +44,8 @@
                 android:hint="Marca"
                 app:layout_constraintBottom_toTopOf="@+id/id_ano"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:id="@+id/id_ano"
@@ -57,7 +59,8 @@
                 android:hint="Ano"
                 app:layout_constraintBottom_toTopOf="@+id/id_modelo"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:id="@+id/id_modelo"
@@ -71,7 +74,8 @@
                 android:hint="Modelo"
                 app:layout_constraintBottom_toTopOf="@+id/idcnh"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:id="@+id/idcnh"
@@ -85,7 +89,8 @@
                 android:hint="Nº CNH"
                 app:layout_constraintBottom_toTopOf="@+id/id_cor"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:id="@+id/id_cor"
@@ -99,7 +104,8 @@
                 android:hint="Cor do veiculo"
                 app:layout_constraintBottom_toTopOf="@+id/id_placa"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:id="@+id/id_placa"
@@ -113,7 +119,8 @@
                 android:hint="Placa"
                 app:layout_constraintBottom_toTopOf="@+id/concluido"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_gravity="center"/>
 
             <Button
                 android:id="@+id/concluido"
@@ -126,7 +133,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_gravity="center"/>
 
         </LinearLayout>
     </ScrollView>

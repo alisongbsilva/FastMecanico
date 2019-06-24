@@ -40,19 +40,43 @@ public class CadastroVeiculo extends AppCompatActivity {
         idModelo = findViewById(R.id.id_modelo);
         idCor = findViewById(R.id.id_cor);
         idCnh = findViewById(R.id.idcnh);
-
+//Botao de concluido
         Button concluido = findViewById(R.id.concluido);
         concluido.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v ){
                 CadastrarVeiculo();
+
             }
+
         });
     }
 
-    private void CadastrarVeiculo(){
-        if(idMarca.getText() == null || idMarca.getText().toString() == ""){
+    private void CadastrarVeiculo() {
+
+
+        if(idMarca.getText() == null || idMarca.getText().toString().length()==0){
             ExibirMensagemErro("Campo marca não pode estar em branco");
+            return;
+        }
+        if(idAno.getText() == null || idAno.getText().toString().length()==0){
+            ExibirMensagemErro("Campo ano não pode estar em branco");
+            return;
+        }
+        if(idPlaca.getText() == null || idPlaca.getText().toString().length()==0){
+            ExibirMensagemErro("Campo placa não pode estar em branco");
+            return;
+        }
+        if(idModelo.getText() == null || idModelo.getText().toString().length()==0){
+            ExibirMensagemErro("Campo modelo não pode estar em branco");
+            return;
+        }
+        if(idCor.getText() == null || idCor.getText().toString().length()==0){
+            ExibirMensagemErro("Campo cor não pode estar em branco");
+            return;
+        }
+        if(idCnh.getText() == null || idCnh.getText().toString().length()==0){
+            ExibirMensagemErro("Campo cnh não pode estar em branco");
             return;
         }
         user = mAuth.getCurrentUser();

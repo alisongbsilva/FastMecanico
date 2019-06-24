@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListaDemandas"></activity>
+        <activity android:name=".ListarVeiculo"></activity>
+        <activity android:name=".ListaDemandas" />
         <activity android:name=".CadastroDemanda" />
         <activity android:name=".CadastroVeiculo" />
         <activity android:name=".CadastroDeUsuario" />

@@ -62,6 +62,14 @@ public class MainActivity extends AppCompatActivity {
         }
     });
 
+    Button listaveiculo = (Button) findViewById(R.id.listaveiculo);
+    listaveiculo.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v ){
+            startActivity(new Intent(getApplicationContext(), ListarVeiculo.class));
+        }
+    });
+
     Button CadastroDemanda = (Button) findViewById(R.id.auxilio);
     CadastroDemanda.setOnClickListener(new View.OnClickListener() {
         @Override

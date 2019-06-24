@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListaDemandas">
+    tools:context=".ListarVeiculo">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -14,33 +14,27 @@
             android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textDemandas"
-        android:layout_width="wrap_content"
-        android:layout_height="27dp"
+        android:id="@+id/veiculoscadastrados"
+        android:layout_width="145dp"
+        android:layout_height="29dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Demandas Abertas"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/lista_demanda"
+        android:text="Veiculos Cadastrados"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.796"
-        android:layout_gravity="center"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
 
             <ListView
-                android:id="@+id/lista_demanda"
-                android:layout_width="411dp"
-                android:layout_height="486dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
+                android:id="@+id/listaVeiculos"
+                android:layout_width="416dp"
+                android:layout_height="686dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.611" />
+                app:layout_constraintStart_toStartOf="parent" />
+
         </LinearLayout>
     </ScrollView>
 
