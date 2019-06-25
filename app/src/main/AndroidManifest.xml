@@ -12,12 +12,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListarVeiculo"></activity>
-        <activity android:name=".ListaDemandas" />
-        <activity android:name=".CadastroDemanda" />
-        <activity android:name=".CadastroVeiculo" />
-        <activity android:name=".CadastroDeUsuario" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ListarVeiculo"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ListaDemandas"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CadastroDemanda"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CadastroVeiculo"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CadastroDeUsuario"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

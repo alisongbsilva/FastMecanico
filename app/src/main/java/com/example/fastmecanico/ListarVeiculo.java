@@ -45,7 +45,9 @@ public class ListarVeiculo extends AppCompatActivity {
                 if(task.isSuccessful()){
                     editar = new ArrayList();
                     for(QueryDocumentSnapshot doc : task.getResult()){
-                        editar.add(doc.getString("Placa") + " - " + doc.getString("Modelo"));
+                        editar.add(doc.getString("Marca") + "  " + doc.getString("Modelo") + " - " + doc.getString("Cor")
+                                + "\n" + doc.getString("Placa")
+                                + "\n" + doc.get("Ano"));
                         //Log.d("editar veiculo", doc.getString("Desc"));
                     }
                     adapter = new ArrayAdapter<String>(ListarVeiculo.this, android.R.layout.simple_list_item_1, editar);
