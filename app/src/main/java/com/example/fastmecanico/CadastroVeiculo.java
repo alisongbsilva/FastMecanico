@@ -51,7 +51,7 @@ public class CadastroVeiculo extends AppCompatActivity {
 
         });
     }
-
+//Exibe mensagem indicando que o campo nao pode estar nulo
     private void CadastrarVeiculo() {
 
 
@@ -79,6 +79,7 @@ public class CadastroVeiculo extends AppCompatActivity {
             ExibirMensagemErro("Campo cnh não pode estar em branco");
             return;
         }
+        //salva os campos preenchidos no banco de dados
         user = mAuth.getCurrentUser();
         Map<String, Object> veiculo = new HashMap<>();
         veiculo.put("Marca", idMarca.getText().toString());
